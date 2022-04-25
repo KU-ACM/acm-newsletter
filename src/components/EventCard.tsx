@@ -1,29 +1,38 @@
-import React from "react";
+import "./eventCard.css";
 
 export type EventData = {
-    date: string;
-    title: string;
-    description: string;
-    cta: string;
-  };
+  datetime: string;
+  title: string;
+  description: string;
+  cta: string;
+};
 
 interface EventDataProps {
-    ed: EventData
+  ed: EventData;
 }
 
 const EventCard = (props: EventDataProps): JSX.Element => {
-    
-return <div className="card-container">
-          <div className="card-header-container">
-            <h3 className="card-header-date">{props.ed.date}</h3>
-            <h1 className="card-header-title">{props.ed.title}</h1>
-          </div>
+  return (
+    <div className="acm-card-container">
+      <img
+        className="acm-card-img"
+        src="https://i.ibb.co/jgj5sfp/ask-alumni-final.png"
+        alt="event"
+      />
+      <div className="acm-card-header-container">
+        <div className="acm-card-header-datetime">{props.ed.datetime}</div>
+        <div className="acm-card-header-title">{props.ed.title}</div>
+      </div>
+      <div className="acm-card-details-container">
+        <div className="acm-card-details-description">
+          {props.ed.description}
+        </div>
+        <button className="acm-button acm-card-details-cta">
+          {props.ed.cta}
+        </button>
+      </div>
+    </div>
+  );
+};
 
-          <div className="card-details-container">
-            <p className="card-details-description">{props.ed.description}</p>
-            <button className="btn btn-light">{props.ed.cta}</button>
-          </div>
-        </div>; 
-}
-
-export default EventCard
+export default EventCard;
