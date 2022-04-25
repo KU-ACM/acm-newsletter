@@ -5,6 +5,7 @@ export type EventData = {
   title: string;
   description: string;
   cta: string;
+  img_src: string;
 };
 
 interface EventDataProps {
@@ -16,7 +17,7 @@ const EventCard = (props: EventDataProps): JSX.Element => {
     <div className="acm-card-container">
       <img
         className="acm-card-img"
-        src="https://i.ibb.co/jgj5sfp/ask-alumni-final.png"
+        src={props.ed.img_src}
         alt="event"
       />
       <div className="acm-card-header-container">
