@@ -1,12 +1,10 @@
 .acm-app-container {
-  min-width: 300px;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .acm-button {
   cursor: pointer;
   color: #fff;
+  font-size: 18px;
   font-weight: 600;
   background-color: #cc0b0b;
   padding: 8px;
