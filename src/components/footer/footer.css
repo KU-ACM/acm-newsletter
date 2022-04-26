@@ -6,6 +6,10 @@
   border-radius: 10px;
 }
 
+.acm-footer a {
+  color: #000
+}
+
 .acm-footer .acm-footer-title {
   font-size: 28px;
   font-weight: bold;
