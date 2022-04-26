@@ -1,36 +1,30 @@
+import { KAEvent } from "../../data/KAEvent";
 import "./eventCard.css";
-
-export type EventData = {
-  datetime: string;
-  title: string;
-  description: string;
-  cta: string;
-  img_src: string;
-};
-
-interface EventDataProps {
-  ed: EventData;
+interface EventCardProps {
+  event: KAEvent;
 }
 
-const EventCard = (props: EventDataProps): JSX.Element => {
+const EventCard = (props: EventCardProps): JSX.Element => {
   return (
     <div className="acm-card-container">
-      <img
-        className="acm-card-img"
-        src={props.ed.img_src}
-        alt="event"
-      />
+      <img className="acm-card-img" src={props.event.img_src} alt="event" />
       <div className="acm-card-header-container">
-        <div className="acm-card-header-datetime">{props.ed.datetime}</div>
-        <div className="acm-card-header-title">{props.ed.title}</div>
+        <div className="acm-card-header-datetime">
+          {props.event.date + " • " + props.event.time}
+        </div>
+        <div className="acm-card-header-title">{props.event.title}</div>
       </div>
       <div className="acm-card-details-container">
         <div className="acm-card-details-description">
-          {props.ed.description}
+          {props.event.description}
         </div>
-        <button className="acm-button acm-card-details-cta">
-          {props.ed.cta}
-        </button>
+        {props.event.cta && (
+          <a href={props.event.cta_url} target="_blank">
+            <button className="acm-button acm-card-details-cta">
+              {props.event.cta}
+            </button>
+          </a>
+        )}
       </div>
     </div>
   );
