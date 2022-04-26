@@ -1,0 +1,25 @@
+.acm-footer {
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.acm-footer .acm-footer-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 10px 10px;
+}
+
+.acm-footer .acm-social-icons-container {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.acm-social-icons-container .acm-social-icon {
+  height: 32px;
+  width: 32px;
+  margin: 0 10px;
+}

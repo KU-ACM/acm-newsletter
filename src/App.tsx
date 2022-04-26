@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import EventCard, { EventData } from "./components/EventCard";
+import EventCard, { EventData } from "./components/event-card/EventCard";
+import Footer from "./components/footer/Footer";
 
 const sampleDate: string = "25 April, Monday • 20:30";
 
@@ -35,7 +36,7 @@ function App() {
       {events.map((e) => (
         <EventCard ed={e} />
       ))}
-      <div className="acm-app-footer"></div>
+      <Footer />
     </div>
   );
 }
