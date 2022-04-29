@@ -1,3 +1,30 @@
 .acm-editor-container {
-  
+  margin: 10px auto;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.acm-editor-container .acm-editor-event-form-container {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.acm-editor-event-form-container .acm-editor-event-form {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.acm-editor-event-form textarea,
+.acm-editor-event-form input {
+  border: 1px solid #dfdfdf;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 20px;
+  resize: vertical;
 }

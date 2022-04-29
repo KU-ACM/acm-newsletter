@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import "./App.css";
 import Editor from "./components/editor/Editor";
 import Newsletter from "./components/newsletter/Newsletter";
-import { sampleNewsletter } from "./data/KANewsletter";
+import { KANewsletter, sampleNewsletter } from "./data/KANewsletter";
 
 function App() {
+  const [newsletterData, setNewsletterData] = useState<KANewsletter>({
+    date: "",
+    events: [],
+  });
   const [isEditing, setEditing] = useState<boolean>(false);
   const toggleEditing = () => setEditing(!isEditing);
   return (
@@ -21,7 +25,7 @@ function App() {
       {isEditing ? (
         <Editor />
       ) : (
-        <Newsletter data={sampleNewsletter} />
+        <Newsletter />
       )}
     </>
   );

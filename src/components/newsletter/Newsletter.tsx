@@ -1,20 +1,20 @@
+import { useContext } from "react";
+import { AppContext } from "../../data/AppContext";
 import { KAEvent, KANewsletter } from "../../data/KANewsletter";
 import EventCard from "../event-card/EventCard";
 import Footer from "../footer/Footer";
 import "./newsletter.css";
 
-interface NewsletterProps {
-  data: KANewsletter;
-}
+const Newsletter = (): JSX.Element => {
+  const { newsletterData } = useContext(AppContext);
 
-const Newsletter = (props: NewsletterProps): JSX.Element => {
   return (
     <div className="acm-newsletter-container">
       <div className="acm-newsletter-header">
         <div className="acm-newsletter-header-title">KU ACM NEWSLETTER</div>
-        <div className="acm-newsletter-header-date">{props.data.date}</div>
+        <div className="acm-newsletter-header-date">{newsletterData.date}</div>
       </div>
-      {props.data.events.map((e) => (
+      {newsletterData.events.map((e) => (
         <EventCard event={e} />
       ))}
       <Footer />
