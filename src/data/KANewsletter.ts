@@ -9,6 +9,11 @@ export type KAEvent = {
   cta_url: string;
 };
 
+export type KANewsletter = {
+  date: string;
+  events: KAEvent[];
+};
+
 const sampleEvent: KAEvent = {
   img_src: "https://i.ibb.co/jgj5sfp/ask-alumni-final.png",
   title: "Ask Alumni - Berker Soyluoğlu",
@@ -33,4 +38,7 @@ const sampleEvent2: KAEvent = {
   cta_url: "",
 };
 
-export const sampleEvents = [sampleEvent, sampleEvent2];
+export const sampleNewsletter: KANewsletter = {
+  date: "25 April 2022",
+  events: [sampleEvent, sampleEvent2],
+};
