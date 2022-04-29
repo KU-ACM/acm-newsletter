@@ -71,6 +71,7 @@ const EventForm = (props: EventFormProps): JSX.Element => {
 
   return (
     <div className="acm-editor-event-form-container">
+      <div className="acm-editor-event-form-title">New Event</div>
       <form
         className="acm-editor-event-form"
         onSubmit={(e) => {
@@ -78,52 +79,60 @@ const EventForm = (props: EventFormProps): JSX.Element => {
           handleSave();
         }}
       >
+        <div className="acm-editor-event-form-label">Image URL</div>
         <input
           required
           type="text"
-          placeholder="Event image URL"
+          placeholder="Image URL"
           onChange={(e) => setEventImgSrc(e.target.value)}
         />
+        <div className="acm-editor-event-form-label">Title</div>
         <input
           required
           type="text"
-          placeholder="Event name"
+          placeholder="Title"
           onChange={(e) => setEventTitle(e.target.value)}
         />
+        <div className="acm-editor-event-form-label">Date</div>
         <input
           required
           type="text"
-          placeholder="Event date"
+          placeholder="Date"
           onChange={(e) => setEventDate(e.target.value)}
         />
+        <div className="acm-editor-event-form-label">Date</div>
         <input
           required
           type="text"
-          placeholder="Event time"
+          placeholder="Date"
           onChange={(e) => setEventTime(e.target.value)}
         />
+        <div className="acm-editor-event-form-label">Venue</div>
         <input
           required
           type="text"
-          placeholder="Event venue"
+          placeholder="Venue"
           onChange={(e) => setEventVenue(e.target.value)}
         />
+        <div className="acm-editor-event-form-label">Description</div>
         <textarea
           required
-          placeholder="Event description"
+          placeholder="Description"
           onChange={(e) => setEventDescription(e.target.value)}
         />
+        <div className="acm-editor-event-form-label">CTA</div>
         <input
           type="text"
-          placeholder="Event CTA"
+          placeholder="CTA"
           onChange={(e) => setEventCTA(e.target.value)}
         />
+        <div className="acm-editor-event-form-label">CTA URL</div>
         <input
           type="text"
-          placeholder="Event CTA URL"
+          placeholder="CTA URL"
           onChange={(e) => setEventCTAURL(e.target.value)}
         />
-        <input type="submit" className="acm-button" value="Add Event" />
+        <input type="submit" className="acm-button" value="Add Event" style={{marginBottom: 0}}/>
       </form>
     </div>
   );

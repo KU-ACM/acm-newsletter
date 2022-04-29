@@ -55,8 +55,13 @@
   flex-direction: column;
 }
 
+.acm-editor-event-form-container .acm-editor-event-form-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 5px;
+}
+
 .acm-editor-event-form-container .acm-editor-event-form {
-  gap: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -68,4 +73,11 @@
   padding: 10px;
   min-height: 20px;
   resize: vertical;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.acm-editor-event-form .acm-editor-event-form-label {
+  font-size: 16px;
+  margin-left: 5px;
 }
