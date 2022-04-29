@@ -4,11 +4,42 @@
   font-size: 18px;
   font-weight: 600;
   background-color: #cc0b0b;
-  padding: 10px 8px;
+  box-shadow: 0 0 3px #00000030;
+  padding: 10px 15px;
   border: 0;
   border-radius: 10px;
 }
 
 .acm-button:hover {
   background-color: #a81010;
+}
+
+.acm-button.acm-button-small {
+  font-size: 16px;
+  padding: 8px 15px;
+}
+
+.acm-button.acm-button-light {
+  color: #282828;
+  background-color: #f0f0f0;
+}
+
+.acm-button.acm-button-light:hover {
+  background-color: #dedede;
+}
+
+.acm-navigation-container {
+  background-color: #fdfdfd;
+  box-shadow: 0 0 5px #00000030;
+  padding: 10px 20px;
+  gap: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.acm-navigation-container .acm-navigation-title {
+  margin-right: auto;
+  font-size: 20px;
+  font-weight: 600;
 }
