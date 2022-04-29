@@ -1,4 +1,4 @@
-import { KAEvent } from "../../data/KAEvent";
+import { KAEvent } from "../../data/KANewsletter";
 import "./eventCard.css";
 interface EventCardProps {
   event: KAEvent;
