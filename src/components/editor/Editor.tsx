@@ -1,7 +1,6 @@
-import events from "events";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../../data/AppContext";
-import { KANewsletter, KAEvent } from "../../data/KANewsletter";
+import { KAEvent } from "../../data/KANewsletter";
 import "./editor.css";
 
 const Editor = (): JSX.Element => {
@@ -14,11 +13,28 @@ const Editor = (): JSX.Element => {
     });
   };
 
+  const deleteEvent = (event: KAEvent) => {
+    setNewsletterData({
+      date: newsletterData.date,
+      events: newsletterData.events.filter((e) => e !== event),
+    });
+  };
+
   return (
     <div className="acm-editor-container">
-      {newsletterData.events.map((e) => (
-        <div>{e.title}</div>
-      ))}
+      <div className="acm-editor-event-preview-container">
+        {newsletterData.events.map((e) => (
+          <div className="acm-editor-event-preview" key={e.title}>
+            <div className="acm-editor-event-preview-title">{e.title}</div>
+            <div
+              className="acm-editor-event-preview-delete-button"
+              onClick={() => deleteEvent(e)}
+            >
+              ⨉
+            </div>
+          </div>
+        ))}
+      </div>
       <EventForm onSave={onEventAdded} index={0} />
     </div>
   );
@@ -55,33 +71,45 @@ const EventForm = (props: EventFormProps): JSX.Element => {
 
   return (
     <div className="acm-editor-event-form-container">
-      <form className="acm-editor-event-form">
+      <form
+        className="acm-editor-event-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSave();
+        }}
+      >
         <input
+          required
           type="text"
           placeholder="Event image URL"
           onChange={(e) => setEventImgSrc(e.target.value)}
         />
         <input
+          required
           type="text"
           placeholder="Event name"
           onChange={(e) => setEventTitle(e.target.value)}
         />
         <input
+          required
           type="text"
           placeholder="Event date"
           onChange={(e) => setEventDate(e.target.value)}
         />
         <input
+          required
           type="text"
           placeholder="Event time"
           onChange={(e) => setEventTime(e.target.value)}
         />
         <input
+          required
           type="text"
           placeholder="Event venue"
           onChange={(e) => setEventVenue(e.target.value)}
         />
         <textarea
+          required
           placeholder="Event description"
           onChange={(e) => setEventDescription(e.target.value)}
         />
@@ -95,10 +123,8 @@ const EventForm = (props: EventFormProps): JSX.Element => {
           placeholder="Event CTA URL"
           onChange={(e) => setEventCTAURL(e.target.value)}
         />
+        <input type="submit" className="acm-button" value="Add Event" />
       </form>
-      <div className="acm-button" onClick={handleSave}>
-        Add Event
-      </div>
     </div>
   );
 };
