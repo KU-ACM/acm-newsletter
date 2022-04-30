@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./App.css";
 import Editor from "./components/editor/Editor";
 import Newsletter from "./components/newsletter/Newsletter";
-import { KANewsletter, sampleNewsletter } from "./data/KANewsletter";
+import { getHtml } from "./data/ExportHelper";
 
 function App() {
-  const [newsletterData, setNewsletterData] = useState<KANewsletter>({
-    date: "",
-    events: [],
-  });
   const [isEditing, setEditing] = useState<boolean>(false);
+  const newsletterRef = useRef<HTMLDivElement>(null);
+
   const toggleEditing = () => setEditing(!isEditing);
+  const handleSave = () => {
+    if (newsletterRef.current) {
+      console.log(getHtml(newsletterRef.current?.outerHTML));
+    }
+  };
+
   return (
     <>
       <div className="acm-navigation-container">
@@ -21,11 +25,19 @@ function App() {
         >
           {isEditing ? "Preview" : "Edit"}
         </div>
+        <div
+          className="acm-button acm-button-small acm-button-light"
+          onClick={handleSave}
+        >
+          Save
+        </div>
       </div>
       {isEditing ? (
         <Editor />
       ) : (
-        <Newsletter />
+        <div ref={newsletterRef}>
+          <Newsletter />
+        </div>
       )}
     </>
   );
