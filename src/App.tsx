@@ -34,13 +34,15 @@ function App() {
           </div>
         </div>
       </div>
-      {isEditing ? (
+      <div style={{ display: isEditing ? "block" : "none" }}>
         <Editor />
-      ) : (
-        <div ref={newsletterRef}>
-          <Newsletter />
-        </div>
-      )}
+      </div>
+      <div
+        ref={newsletterRef}
+        style={{ display: isEditing ? "none" : "block" }}
+      >
+        <Newsletter />
+      </div>
     </>
   );
 }
