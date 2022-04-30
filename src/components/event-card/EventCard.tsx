@@ -10,7 +10,7 @@ const EventCard = (props: EventCardProps): JSX.Element => {
       <img className="acm-card-img" src={props.event.img_src} alt="event" />
       <div className="acm-card-header-container">
         <div className="acm-card-header-datetime">
-          {props.event.date + " • " + props.event.time}
+          {(props.event.date) + (props.event.time !== "" ? (" • " + props.event.time) : "")}
         </div>
         <div className="acm-card-header-title">{props.event.title}</div>
       </div>
