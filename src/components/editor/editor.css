@@ -4,6 +4,18 @@
   padding: 10px;
 }
 
+.acm-editor-container .acm-editor-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.acm-editor-container .acm-editor-subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 25px 0 15px;
+}
+
 .acm-editor-container .acm-editor-event-preview-container {
   display: flex;
   gap: 10px;
@@ -45,7 +57,7 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
-.acm-editor-container .acm-editor-event-form-container {
+.acm-editor-container .acm-editor-form-container {
   background-color: #f0f0f0;
   border-radius: 10px;
   padding: 10px;
@@ -55,29 +67,97 @@
   flex-direction: column;
 }
 
-.acm-editor-event-form-container .acm-editor-event-form-title {
-  font-size: 22px;
+.acm-editor-form-container .acm-editor-form-title {
+  font-size: 18px;
   font-weight: bold;
-  margin: 10px 5px;
+  margin: 5px;
 }
 
-.acm-editor-event-form-container .acm-editor-event-form {
+.acm-editor-form-container .acm-editor-form {
   display: flex;
   flex-direction: column;
 }
 
-.acm-editor-event-form textarea,
-.acm-editor-event-form input {
+.acm-editor-form textarea,
+.acm-editor-form input {
   border: 1px solid #dfdfdf;
   border-radius: 10px;
   padding: 10px;
   min-height: 20px;
-  resize: vertical;
   margin-top: 10px;
   margin-bottom: 15px;
 }
 
-.acm-editor-event-form .acm-editor-event-form-label {
+.acm-editor-form textarea {
+  resize: vertical;
+}
+
+.acm-editor-form .acm-editor-form-label {
   font-size: 16px;
   margin-left: 5px;
+}
+.acm-editor-form .acm-editor-form-file-input-container {
+  border: 1px solid #dfdfdf;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.acm-editor-form-file-input-container .acm-editor-form-file-image-preview {
+  height: 100px;
+  width: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acm-editor-form-file-image-preview .acm-editor-form-file-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.acm-editor-form-file-input-container .acm-editor-form-file-input-upload-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.acm-editor-form-file-input-upload-area .acm-editor-form-file-url {
+  font-size: 14px;
+}
+
+.acm-editor-form-file-input-upload-area .acm-editor-form-file-input-button {
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100px;
+  height: 30px;
+  color: #282828;
+  background-color: #f0f0f0;
+}
+
+.acm-editor-form-file-input-button .acm-editor-form-file-input {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
