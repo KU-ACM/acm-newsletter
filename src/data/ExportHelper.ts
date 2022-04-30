@@ -236,7 +236,7 @@ const prepend = `
       }
 
       .acm-footer .acm-footer-title {
-        font-size: 28px;
+        font-size: 22px;
         font-weight: bold;
         text-align: center;
         padding: 0 10px 10px;
@@ -251,7 +251,7 @@ const prepend = `
         color: #000;
         height: 32px;
         width: 32px;
-        margin: 0 10px;
+        margin: 0 8px;
       }
     </style>
     <style>
