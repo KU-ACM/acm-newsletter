@@ -1,6 +1,7 @@
-import { useContext, useState } from "react";
+import { ChangeEvent, useContext, useState } from "react";
 import { AppContext } from "../../data/AppContext";
 import { KAEvent } from "../../data/KANewsletter";
+import { uploadImage } from "../../services/ImageUploadService";
 import "./editor.css";
 
 const Editor = (): JSX.Element => {
@@ -65,8 +66,15 @@ const EventForm = (props: EventFormProps): JSX.Element => {
       cta: eventCTA,
       cta_url: eventCTAURL,
     };
-
     props.onSave(event);
+  };
+
+  const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.currentTarget.files?.[0];
+    if (file) {
+      uploadImage(file).then((result) => {setEventImgSrc(result);
+      });
+    }
   };
 
   return (
@@ -82,9 +90,9 @@ const EventForm = (props: EventFormProps): JSX.Element => {
         <div className="acm-editor-event-form-label">Image URL</div>
         <input
           required
-          type="text"
+          type="file"
           placeholder="Image URL"
-          onChange={(e) => setEventImgSrc(e.target.value)}
+          onChange={handleImageUpload}
         />
         <div className="acm-editor-event-form-label">Title</div>
         <input
@@ -132,7 +140,12 @@ const EventForm = (props: EventFormProps): JSX.Element => {
           placeholder="CTA URL"
           onChange={(e) => setEventCTAURL(e.target.value)}
         />
-        <input type="submit" className="acm-button" value="Add Event" style={{marginBottom: 0}}/>
+        <input
+          type="submit"
+          className="acm-button"
+          value="Add Event"
+          style={{ marginBottom: 0 }}
+        />
       </form>
     </div>
   );
