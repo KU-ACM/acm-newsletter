@@ -34,18 +34,40 @@
   background-color: #dedede;
 }
 
-.acm-navigation-container {
+.acm-navbar {
   background-color: #fdfdfd;
   box-shadow: 0 0 5px #00000030;
   padding: 10px 20px;
   gap: 10px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: center;
 }
 
-.acm-navigation-container .acm-navigation-title {
+.acm-navbar .acm-navbar-item-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 500px;
+}
+
+.acm-navbar-item-container .acm-navbar-title {
   margin-right: auto;
   font-size: 20px;
   font-weight: 600;
+}
+
+.acm-navbar-item-container .acm-navbar-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #424242;
+  margin-left: 20px;
+  width: 20px;
+}
+
+.acm-navbar-button .acm-navbar-button-icon {
+  height: 20px;
+  width: 20px;
 }

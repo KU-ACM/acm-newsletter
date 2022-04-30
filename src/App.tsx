@@ -3,6 +3,7 @@ import "./App.css";
 import Editor from "./components/editor/Editor";
 import Newsletter from "./components/newsletter/Newsletter";
 import { getHtml } from "./data/ExportHelper";
+import { EyeFill, PencilFill, ClipboardPlusFill } from "react-bootstrap-icons";
 
 function App() {
   const [isEditing, setEditing] = useState<boolean>(false);
@@ -12,24 +13,28 @@ function App() {
   const handleSave = () => {
     if (newsletterRef.current) {
       console.log(getHtml(newsletterRef.current?.outerHTML));
+      navigator.clipboard.writeText(newsletterRef.current?.outerHTML);
     }
   };
 
   return (
     <>
-      <div className="acm-navigation-container">
-        <div className="acm-navigation-title">KU ACM Newsletter</div>
-        <div
-          className="acm-button acm-button-small acm-button-light"
-          onClick={toggleEditing}
-        >
-          {isEditing ? "Preview" : "Edit"}
-        </div>
-        <div
-          className="acm-button acm-button-small acm-button-light"
-          onClick={handleSave}
-        >
-          Save
+      <div className="acm-navbar">
+        <div className="acm-navbar-item-container">
+          <div className="acm-navbar-title">KU ACM Newsletter</div>
+          <div
+            className="acm-navbar-button"
+            onClick={toggleEditing}
+          >
+            {isEditing ? (
+              <EyeFill className="acm-navbar-button-icon" />
+            ) : (
+              <PencilFill className="acm-navbar-button-icon" />
+            )}
+          </div>
+          <div className="acm-navbar-button" onClick={handleSave}>
+            <ClipboardPlusFill className="acm-navbar-button-icon" />
+          </div>
         </div>
       </div>
       {isEditing ? (
