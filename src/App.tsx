@@ -13,7 +13,7 @@ function App() {
   const handleSave = () => {
     if (newsletterRef.current) {
       console.log(getHtml(newsletterRef.current?.outerHTML));
-      navigator.clipboard.writeText(newsletterRef.current?.outerHTML);
+      navigator.clipboard.writeText(getHtml(newsletterRef.current?.outerHTML));
     }
   };
 
@@ -22,10 +22,7 @@ function App() {
       <div className="acm-navbar">
         <div className="acm-navbar-item-container">
           <div className="acm-navbar-title">KU ACM Newsletter</div>
-          <div
-            className="acm-navbar-button"
-            onClick={toggleEditing}
-          >
+          <div className="acm-navbar-button" onClick={toggleEditing}>
             {isEditing ? (
               <EyeFill className="acm-navbar-button-icon" />
             ) : (

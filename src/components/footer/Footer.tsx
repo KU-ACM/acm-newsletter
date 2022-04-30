@@ -3,16 +3,14 @@ import "./footer.css";
 const Footer = (): JSX.Element => {
   return (
     <div className="acm-footer">
-      <div className="acm-footer-title">
-        Follow us on social media:
-      </div>
+      <div className="acm-footer-title">Follow us on social media:</div>
       <div className="acm-social-icons-container">{socialIcons}</div>
     </div>
   );
 };
 
 const instagramIcon = (
-  <a href="https://www.instagram.com/kuacm/" target="_blank">
+  <a key="instagram" href="https://www.instagram.com/kuacm/" target="_blank">
     <svg
       className="acm-social-icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +26,11 @@ const instagramIcon = (
 );
 
 const facebookIcon = (
-  <a href="https://www.facebook.com/kuacmchapter/" target="_blank">
+  <a
+    key="facebook"
+    href="https://www.facebook.com/kuacmchapter/"
+    target="_blank"
+  >
     <svg
       className="acm-social-icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +46,7 @@ const facebookIcon = (
 );
 
 const twitterIcon = (
-  <a href="https://twitter.com/KU_ACM" target="_blank">
+  <a key="twitter" href="https://twitter.com/KU_ACM" target="_blank">
     <svg
       className="acm-social-icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +62,11 @@ const twitterIcon = (
 );
 
 const youtubeIcon = (
-  <a href="https://www.youtube.com/channel/UCNYX647yFgLltaOjR0OJGkw" target="_blank">
+  <a
+    key="youtube"
+    href="https://www.youtube.com/channel/UCNYX647yFgLltaOjR0OJGkw"
+    target="_blank"
+  >
     <svg
       className="acm-social-icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +82,11 @@ const youtubeIcon = (
 );
 
 const spotifyIcon = (
-  <a href="https://open.spotify.com/user/9u9kot80wzkz1usmok1lk5woa?si=Kv7GrariRPG3bVZV_mOWP6A" target="_blank">
+  <a
+    key="spotify"
+    href="https://open.spotify.com/user/9u9kot80wzkz1usmok1lk5woa?si=Kv7GrariRPG3bVZV_mOWP6A"
+    target="_blank"
+  >
     <svg
       className="acm-social-icon"
       xmlns="http://www.w3.org/2000/svg"
