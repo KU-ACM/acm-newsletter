@@ -248,6 +248,7 @@ const prepend = `
       }
 
       .acm-social-icons-container .acm-social-icon {
+        color: #000;
         height: 32px;
         width: 32px;
         margin: 0 10px;
