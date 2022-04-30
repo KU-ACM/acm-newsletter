@@ -154,21 +154,21 @@ const EventForm = (props: EventFormProps): JSX.Element => {
         />
         <div className="acm-editor-form-label">Date</div>
         <input
-          required
+          
           type="text"
           placeholder="Date"
           onChange={(e) => setEventDate(e.target.value)}
         />
         <div className="acm-editor-form-label">Time</div>
         <input
-          required
+          
           type="text"
           placeholder="Time"
           onChange={(e) => setEventTime(e.target.value)}
         />
         <div className="acm-editor-form-label">Venue</div>
         <input
-          required
+          
           type="text"
           placeholder="Venue"
           onChange={(e) => setEventVenue(e.target.value)}
