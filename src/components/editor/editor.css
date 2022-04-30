@@ -1,0 +1,83 @@
+.acm-editor-container {
+  margin: 10px auto;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.acm-editor-container .acm-editor-event-preview-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  overflow: scroll;
+}
+
+.acm-editor-event-preview-container .acm-editor-event-preview {
+  display: flex;
+  gap: 10px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  height: 30px;
+  white-space: nowrap;
+}
+
+.acm-editor-event-preview .acm-editor-event-preview-title {
+  font-size: 18px;
+}
+
+.acm-editor-event-preview .acm-editor-event-preview-delete-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cc0b0b;
+  font-size: 18px;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 100%;
+  margin: 5px;
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.acm-editor-container .acm-editor-event-form-container {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.acm-editor-event-form-container .acm-editor-event-form-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 5px;
+}
+
+.acm-editor-event-form-container .acm-editor-event-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.acm-editor-event-form textarea,
+.acm-editor-event-form input {
+  border: 1px solid #dfdfdf;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 20px;
+  resize: vertical;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.acm-editor-event-form .acm-editor-event-form-label {
+  font-size: 16px;
+  margin-left: 5px;
+}

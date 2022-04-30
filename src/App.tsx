@@ -1,37 +1,50 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useRef, useState } from "react";
 import "./App.css";
-import EventCard, { EventData } from "./components/EventCard";
-
-const sampleDate: string = "25 April, Monday";
-
-const sampleEvent: EventData = {
-  date: sampleDate,
-  title: "Ask Alumni - Berker Soyluoğlu",
-  description:
-    "Ask Alumni is here once again! This time in Ask Alumni, Berker Soyluoğlu from Facebook will be our guest and talk about his experiences and his life after graduation. After his talk, he will be answering the students’ questions.",
-  cta: "Register now!",
-};
-
-const sampleEvent2: EventData = {
-  date: sampleDate,
-  title: "KUrypto",
-  description:
-    "Ask Alumni is here once again! This time in Ask Alumni, Berker Soyluoğlu from Facebook will be our guest and talk about his experiences and his life after graduation. After his talk, he will be answering the students’ questions.",
-  cta: "Register now!",
-};
-
-const events: EventData[] = [sampleEvent, sampleEvent2];
+import Editor from "./components/editor/Editor";
+import Newsletter from "./components/newsletter/Newsletter";
+import { getHtml } from "./data/ExportHelper";
+import { EyeFill, PencilFill, ClipboardPlusFill } from "react-bootstrap-icons";
 
 function App() {
+  const [isEditing, setEditing] = useState<boolean>(false);
+  const newsletterRef = useRef<HTMLDivElement>(null);
+
+  const toggleEditing = () => setEditing(!isEditing);
+  const handleSave = () => {
+    if (newsletterRef.current) {
+      console.log(getHtml(newsletterRef.current?.outerHTML));
+      navigator.clipboard.writeText(getHtml(newsletterRef.current?.outerHTML));
+    }
+  };
+
   return (
-    <div className="container">
-      
-      {events.map((e) => <EventCard ed={e}/> )}
-    </div>
+    <>
+      <div className="acm-navbar">
+        <div className="acm-navbar-item-container">
+          <div className="acm-navbar-title">KU ACM Newsletter</div>
+          <div className="acm-navbar-button" onClick={toggleEditing}>
+            {isEditing ? (
+              <EyeFill className="acm-navbar-button-icon" />
+            ) : (
+              <PencilFill className="acm-navbar-button-icon" />
+            )}
+          </div>
+          <div className="acm-navbar-button" onClick={handleSave}>
+            <ClipboardPlusFill className="acm-navbar-button-icon" />
+          </div>
+        </div>
+      </div>
+      <div style={{ display: isEditing ? "block" : "none" }}>
+        <Editor />
+      </div>
+      <div
+        ref={newsletterRef}
+        style={{ display: isEditing ? "none" : "block" }}
+      >
+        <Newsletter />
+      </div>
+    </>
   );
 }
 
 export default App;
-
-
