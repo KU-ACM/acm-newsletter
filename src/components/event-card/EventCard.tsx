@@ -7,7 +7,7 @@ interface EventCardProps {
 const EventCard = (props: EventCardProps): JSX.Element => {
   return (
     <div className="acm-card-container">
-      <img className="acm-card-img" src={props.event.img_src} alt="event" />
+      {props.event.img_src !== "" && <img className="acm-card-img" src={props.event.img_src} alt="event" />}
       <div className="acm-card-header-container">
         <div className="acm-card-header-datetime">
           {(props.event.date) + (props.event.time !== "" ? (" • " + props.event.time) : "")}
