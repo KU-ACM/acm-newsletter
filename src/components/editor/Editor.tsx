@@ -58,7 +58,12 @@ const Editor = (): JSX.Element => {
       <div className="acm-editor-subtitle">Date</div>
       <div style={{ padding: 5 }}>
         <div className="acm-editor-form-container">
-          <form className="acm-editor-form">
+          <form
+            className="acm-editor-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
             <input
               type="text"
               style={{ margin: 0 }}
