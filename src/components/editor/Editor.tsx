@@ -63,7 +63,10 @@ const Editor = (): JSX.Element => {
               type="text"
               style={{ margin: 0 }}
               placeholder="Newsletter date"
-              onChange={handleDateChange}
+              onChange={(event) => {
+                event.preventDefault();
+                handleDateChange(event);
+              }}
             />
           </form>
         </div>
