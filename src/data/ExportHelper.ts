@@ -215,6 +215,7 @@ const prepend = `
         margin-bottom: 20px;
         color: #282828;
         text-align: justify;
+        white-space: pre-wrap;
       }
 
       .acm-card-details-container .acm-card-details-cta {
