@@ -204,7 +204,6 @@ const prepend = `
 
       .acm-card-container .acm-card-details-container {
         padding: 10px;
-        height: 100%;
       }
 
       .acm-card-details-container .acm-card-details-description {
