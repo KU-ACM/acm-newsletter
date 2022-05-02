@@ -184,7 +184,7 @@ const prepend = `
       }
 
       .acm-card-container .acm-card-header-container {
-        padding: 10px;
+        padding: 10px 15px;
       }
 
       .acm-card-header-container .acm-card-header-datetime {
@@ -203,7 +203,7 @@ const prepend = `
       }
 
       .acm-card-container .acm-card-details-container {
-        padding: 10px;
+        padding: 10px 15px;
       }
 
       .acm-card-details-container .acm-card-details-description {
@@ -211,16 +211,16 @@ const prepend = `
         line-height: 22px;
         min-height: 0;
         min-width: 0;
-        margin-bottom: 20px;
         color: #282828;
         text-align: justify;
         white-space: pre-wrap;
       }
-
+      
       .acm-card-details-container .acm-card-details-cta {
-        margin-top: auto;
+        margin-top: 20px;
         width: 100%;
       }
+      
     </style>
     <style>
       .acm-footer {
