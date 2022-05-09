@@ -41,7 +41,7 @@ const prepend = `
         box-shadow: 0 0 3px #00000030;
         padding: 10px 15px;
         border: 0;
-        border-radius: 10px;
+        border-radius: 8px;
         user-select: none; /* supported by Chrome and Opera */
         -webkit-user-select: none; /* Safari */
         -khtml-user-select: none; /* Konqueror HTML */
@@ -177,35 +177,46 @@ const prepend = `
         min-width: 300px;
         max-width: 500px;
       }
-
+      
       .acm-card-container .acm-card-img {
+        border-bottom: 1px solid #dfdfdf;
         border-radius: 10px 10px 0 0;
         width: 100%;
       }
-
+      
       .acm-card-container .acm-card-header-container {
-        padding: 10px 15px;
+        padding: 10px 10px;
       }
-
-      .acm-card-header-container .acm-card-header-datetime {
+      
+      .acm-card-header-container .acm-card-header-dtv-container {
         margin-top: 5px;
         margin-bottom: 10px;
-        font-size: 20px;
+        font-size: 18px;
         color: #e50909;
-        font-weight: bold;
+        font-weight: 600;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 8px;
       }
-
+      
+      .acm-card-header-dtv-container .acm-card-header-dtv {
+        border: 2px solid #e50909;
+        padding: 3px 5px;
+        border-radius: 6px;
+      }
+      
+      
       .acm-card-header-container .acm-card-header-title {
         margin-top: 5px;
-        font-size: 24px;
+        font-size: 22px;
         line-height: 26px;
         font-weight: bold;
       }
-
+      
       .acm-card-container .acm-card-details-container {
-        padding: 10px 15px;
+        padding: 10px 10px;
       }
-
+      
       .acm-card-details-container .acm-card-details-description {
         font-size: 18px;
         line-height: 22px;
