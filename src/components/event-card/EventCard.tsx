@@ -12,9 +12,15 @@ const EventCard = (props: EventCardProps): JSX.Element => {
       )}
       <div className="acm-card-header-container">
         <div className="acm-card-header-dtv-container">
-          <div className="acm-card-header-dtv">{props.event.date}</div>
-          <div className="acm-card-header-dtv">{props.event.time}</div>
-          <div className="acm-card-header-dtv">{props.event.venue}</div>
+          {props.event.date && (
+            <div className="acm-card-header-dtv">{props.event.date}</div>
+          )}
+          {props.event.time && (
+            <div className="acm-card-header-dtv">{props.event.time}</div>
+          )}
+          {props.event.venue && (
+            <div className="acm-card-header-dtv">{props.event.venue}</div>
+          )}
         </div>
         <div className="acm-card-header-title">{props.event.title}</div>
       </div>
