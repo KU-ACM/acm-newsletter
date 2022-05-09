@@ -1,7 +1,6 @@
 export const uploadImage = async (file: File): Promise<string> => {
   let fileBase64: string = (await convertBase64(file)) as string;
   fileBase64 = fileBase64.split(",")[1];
-  console.log(fileBase64);
 
   const formData = new FormData();
   formData.append("image", fileBase64);
