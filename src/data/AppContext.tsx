@@ -1,9 +1,8 @@
 import React, {
-  createContext,
   Dispatch,
   ReactNode,
   SetStateAction,
-  useState,
+  useState
 } from "react";
 import { KANewsletter } from "./KANewsletter";
 
@@ -20,6 +19,8 @@ interface AppProviderProps {
 
 export const AppContextProvider = ({ children }: AppProviderProps) => {
   const [newsletterData, setNewsletterData] = useState<KANewsletter>({
+    hasHeader: true,
+    title: 'KU ACM NEWSLETTER',
     date: "",
     events: [],
   });

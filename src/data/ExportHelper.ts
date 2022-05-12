@@ -169,69 +169,65 @@ const prepend = `
       }
     </style>
     <style>
-      .acm-card-container {
-        background-color: #fff;
-        border: 1px solid #dfdfdf;
-        margin: 10px 0;
-        border-radius: 10px;
-        min-width: 300px;
-        max-width: 500px;
-      }
-      
-      .acm-card-container .acm-card-img {
-        border-bottom: 1px solid #dfdfdf;
-        border-radius: 10px 10px 0 0;
-        width: 100%;
-      }
-      
-      .acm-card-container .acm-card-header-container {
-        padding: 10px 10px;
-      }
-      
-      .acm-card-header-container .acm-card-header-dtv-container {
-        margin-top: 5px;
-        margin-bottom: 10px;
-        font-size: 18px;
-        color: #e50909;
-        font-weight: 600;
-        display: flex;
-        flex-flow: row wrap;
-        gap: 8px;
-      }
-      
-      .acm-card-header-dtv-container .acm-card-header-dtv {
-        border: 2px solid #e50909;
-        padding: 3px 5px;
-        border-radius: 6px;
-      }
-      
-      
-      .acm-card-header-container .acm-card-header-title {
-        margin-top: 5px;
-        font-size: 22px;
-        line-height: 26px;
-        font-weight: bold;
-      }
-      
-      .acm-card-container .acm-card-details-container {
-        padding: 10px 10px;
-      }
-      
-      .acm-card-details-container .acm-card-details-description {
-        font-size: 18px;
-        line-height: 22px;
-        min-height: 0;
-        min-width: 0;
-        color: #282828;
-        text-align: justify;
-        white-space: pre-wrap;
-      }
-      
-      .acm-card-details-container .acm-card-details-cta {
-        margin-top: 20px;
-        width: 100%;
-      }
-      
+    .acm-card-container {
+      background-color: #fff;
+      border: 1px solid #dfdfdf;
+      margin: 10px 0;
+      border-radius: 10px;
+      min-width: 300px;
+      max-width: 500px;
+    }
+    
+    .acm-card-container .acm-card-img {
+      border-bottom: 1px solid #dfdfdf;
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+    }
+    
+    .acm-card-container .acm-card-header-container {
+      padding: 10px 10px;
+    }
+    
+    .acm-card-header-container .acm-card-header-dtv-container {
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #e50909;
+      font-weight: 600;
+    }
+    
+    .acm-card-header-dtv-container .acm-card-header-dtv {
+      display: inline-block;
+      margin: 0 5px 5px 0;
+      border: 2px solid #e50909;
+      padding: 3px 5px;
+      border-radius: 6px;
+    }
+    
+    
+    .acm-card-header-container .acm-card-header-title {
+      font-size: 24px;
+      line-height: 26px;
+      font-weight: bold;
+    }
+    
+    .acm-card-container .acm-card-details-container {
+      padding: 10px 10px;
+    }
+    
+    .acm-card-details-container .acm-card-details-description {
+      font-size: 18px;
+      line-height: 22px;
+      min-height: 0;
+      min-width: 0;
+      color: #282828;
+      text-align: justify;
+      white-space: pre-wrap;
+    }
+    
+    .acm-card-details-container .acm-card-details-cta {
+      margin-top: 20px;
+      width: 100%;
+    }    
     </style>
     <style>
       .acm-footer {
