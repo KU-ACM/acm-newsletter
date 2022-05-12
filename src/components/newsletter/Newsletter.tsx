@@ -10,10 +10,10 @@ const Newsletter = (): JSX.Element => {
 
   return (
     <div className="acm-newsletter-container">
-      <div className="acm-newsletter-header">
-        <div className="acm-newsletter-header-title">KU ACM NEWSLETTER</div>
+      {newsletterData.hasHeader && <div className="acm-newsletter-header">
+        <div className="acm-newsletter-header-title">{newsletterData.title}</div>
         <div className="acm-newsletter-header-date">{newsletterData.date}</div>
-      </div>
+      </div>}
       {newsletterData.events.map((e) => (
         <EventCard event={e} />
       ))}

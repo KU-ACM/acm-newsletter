@@ -1,18 +1,24 @@
 import { ChangeEvent, useContext, useState } from "react";
+import { CardImage, PencilFill, PlusCircleFill } from "react-bootstrap-icons";
 import { AppContext } from "../../data/AppContext";
 import { emptyEvent, KAEvent } from "../../data/KANewsletter";
 import { uploadImage } from "../../services/ImageUploadService";
-import {
-  CardImage,
-  PencilFill,
-  PlusCircle,
-  PlusCircleFill,
-} from "react-bootstrap-icons";
 import "./editor.css";
 
 const Editor = (): JSX.Element => {
   const { newsletterData, setNewsletterData } = useContext(AppContext);
   const [editingIndex, setEditingIndex] = useState<number>(-1);
+  const [headerEnabled, setHeaderEnabled] = useState<boolean>(true);
+  const [singleEventMode, setSingleEventMode] = useState<boolean>(false);
+
+  const switchSingleEventModeTo = (flag: boolean) => {
+    setNewsletterData({
+      ...newsletterData,
+      hasHeader: !flag,
+    });
+    setHeaderEnabled(!flag);
+    setSingleEventMode(flag);
+  };
 
   const onEditingIndexChanged = (index: number) => {
     setEditingIndex(index);
@@ -22,7 +28,7 @@ const Editor = (): JSX.Element => {
     const _events = newsletterData.events;
     _events[editingIndex] = event;
     setNewsletterData({
-      date: newsletterData.date,
+      ...newsletterData,
       events: _events,
     });
     setEditingIndex(-1);
@@ -31,7 +37,7 @@ const Editor = (): JSX.Element => {
   const onEventCreated = () => {
     const numCurrentEvents = newsletterData.events.length;
     setNewsletterData({
-      date: newsletterData.date,
+      ...newsletterData,
       events: [...newsletterData.events, emptyEvent],
     });
     setEditingIndex(numCurrentEvents);
@@ -40,39 +46,76 @@ const Editor = (): JSX.Element => {
   const deleteEvent = (event: KAEvent) => {
     setEditingIndex(-1);
     setNewsletterData({
-      date: newsletterData.date,
+      ...newsletterData,
       events: newsletterData.events.filter((e) => e !== event),
     });
   };
 
   const handleDateChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNewsletterData({
+      ...newsletterData,
       date: e.target.value,
-      events: newsletterData.events,
+    });
+  };
+
+  const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNewsletterData({
+      ...newsletterData,
+      title: e.target.value,
     });
   };
 
   return (
     <div className="acm-editor-container">
-      <div className="acm-editor-title">Newsletter Editor</div>
-      <div className="acm-editor-subtitle">Date</div>
-      <div style={{ padding: 5 }}>
-        <div className="acm-editor-form-container">
-          <form
-            className="acm-editor-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
-            <input
-              type="text"
-              style={{ margin: 0 }}
-              placeholder="Newsletter date"
-              onChange={handleDateChange}
-            />
-          </form>
+      <div className="acm-switcher">
+        <div
+          className={
+            "acm-switcher-item" +
+            (singleEventMode ? "" : " acm-switcher-item-selected")
+          }
+          onClick={() => switchSingleEventModeTo(false)}
+        >
+          Weekly Newsletter
+        </div>
+        <div
+          className={
+            "acm-switcher-item" +
+            (singleEventMode ? " acm-switcher-item-selected" : "")
+          }
+          onClick={() => switchSingleEventModeTo(true)}
+        >
+          Single Event
         </div>
       </div>
+      {headerEnabled && (
+        <>
+          <div className="acm-editor-subtitle">Header</div>
+          <div style={{ padding: 5 }}>
+            <div className="acm-editor-form-container">
+              <form
+                className="acm-editor-form"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                <div className="acm-editor-form-label">Title</div>
+                <input
+                  type="text"
+                  value={newsletterData.title}
+                  onChange={handleTitleChange}
+                />
+                <div className="acm-editor-form-label">Date</div>
+                <input
+                  type="text"
+                  style={{ marginBottom: 0 }}
+                  placeholder="Newsletter date"
+                  onChange={handleDateChange}
+                />
+              </form>
+            </div>
+          </div>
+        </>
+      )}
       <div className="acm-editor-subtitle">Events</div>
       <div className="acm-editor-event-preview-container">
         {newsletterData.events.map((e) => (

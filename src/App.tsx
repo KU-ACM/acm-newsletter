@@ -21,7 +21,7 @@ function App() {
     <>
       <div className="acm-navbar">
         <div className="acm-navbar-item-container">
-          <div className="acm-navbar-title">KU ACM Newsletter</div>
+          <div className="acm-navbar-title">KU ACM Email Builder</div>
           <div className="acm-navbar-button" onClick={toggleEditing}>
             {isEditing ? (
               <EyeFill className="acm-navbar-button-icon" />
