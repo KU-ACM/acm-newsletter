@@ -10,6 +10,8 @@ export type KAEvent = {
 };
 
 export type KANewsletter = {
+  hasHeader: boolean;
+  title: string;
   date: string;
   events: KAEvent[];
 };

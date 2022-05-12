@@ -18,17 +18,15 @@
 }
 
 .acm-card-header-container .acm-card-header-dtv-container {
-  margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 18px;
   color: #e50909;
   font-weight: 600;
-  display: flex;
-  flex-flow: row wrap;
-  gap: 8px;
 }
 
 .acm-card-header-dtv-container .acm-card-header-dtv {
+  display: inline-block;
+  margin: 0 5px 5px 0;
   border: 2px solid #e50909;
   padding: 3px 5px;
   border-radius: 6px;
@@ -36,8 +34,7 @@
 
 
 .acm-card-header-container .acm-card-header-title {
-  margin-top: 5px;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 26px;
   font-weight: bold;
 }

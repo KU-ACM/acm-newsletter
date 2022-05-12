@@ -71,3 +71,38 @@
   height: 20px;
   width: 20px;
 }
+
+.acm-switcher {
+  background-color: #f0f0f0;
+  display: flex;
+  cursor: pointer;
+  color: #282828;
+  box-shadow: 0 0 3px #00000030;
+  border: 0;
+  border-radius: 8px;
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.acm-switcher .acm-switcher-item {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  padding: 10px 15px;
+  display: flex;
+  flex: 1 1 0;
+  height: 100%;
+  z-index: 0;
+}
+
+.acm-switcher-item.acm-switcher-item-selected {
+  background-color: #fdfdfd;
+  box-shadow: 0 0 3px #00000010;
+  z-index: 1;
+}
