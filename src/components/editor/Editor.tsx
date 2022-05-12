@@ -9,15 +9,15 @@ const Editor = (): JSX.Element => {
   const { newsletterData, setNewsletterData } = useContext(AppContext);
   const [editingIndex, setEditingIndex] = useState<number>(-1);
   const [headerEnabled, setHeaderEnabled] = useState<boolean>(true);
-  const [singleEventMode, setSingleEventMode] = useState<boolean>(false);
+  const [eventOnlyMode, setEventOnlyMode] = useState<boolean>(false);
 
-  const switchSingleEventModeTo = (flag: boolean) => {
+  const switchEventOnlyModeTo = (flag: boolean) => {
     setNewsletterData({
       ...newsletterData,
       hasHeader: !flag,
     });
     setHeaderEnabled(!flag);
-    setSingleEventMode(flag);
+    setEventOnlyMode(flag);
   };
 
   const onEditingIndexChanged = (index: number) => {
@@ -71,20 +71,20 @@ const Editor = (): JSX.Element => {
         <div
           className={
             "acm-switcher-item" +
-            (singleEventMode ? "" : " acm-switcher-item-selected")
+            (eventOnlyMode ? "" : " acm-switcher-item-selected")
           }
-          onClick={() => switchSingleEventModeTo(false)}
+          onClick={() => switchEventOnlyModeTo(false)}
         >
           Weekly Newsletter
         </div>
         <div
           className={
             "acm-switcher-item" +
-            (singleEventMode ? " acm-switcher-item-selected" : "")
+            (eventOnlyMode ? " acm-switcher-item-selected" : "")
           }
-          onClick={() => switchSingleEventModeTo(true)}
+          onClick={() => switchEventOnlyModeTo(true)}
         >
-          Single Event
+          Event Only
         </div>
       </div>
       {headerEnabled && (
